@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Esme 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: "Comic Sans MS", cursive;
+    background: linear-gradient(#72cfff, #c9f5ff);
+}
+
+/* CIELO */
+.cielo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#62c9ff 0%, #bdeeff 70%, #e9fbff 100%);
+    z-index: -5;
+}
+
+/* SOL */
+.sol {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #ffd83d;
+    border-radius: 50%;
+    top: 45px;
+    right: 70px;
+    box-shadow: 0 0 40px #fff176;
+}
+
+/* ARCOIRIS */
+.arcoiris {
+    position: absolute;
+    width: 520px;
+    height: 260px;
+    border-radius: 520px 520px 0 0;
+    border: 18px solid red;
+    border-bottom: 0;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .8;
+}
+
+.arcoiris::before {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 240px;
+    border-radius: 480px 480px 0 0;
+    border: 18px solid orange;
+    border-bottom: 0;
+    top: 18px;
+    left: 2px;
+}
+
+.arcoiris::after {
+    content: "";
+    position: absolute;
+    width: 440px;
+    height: 220px;
+    border-radius: 440px 440px 0 0;
+    border: 18px solid yellow;
+    border-bottom: 0;
+    top: 36px;
+    left: 20px;
+}
+
+/* NUBES */
+.nube {
+    position: absolute;
+    background: white;
+    width: 130px;
+    height: 45px;
+    border-radius: 50px;
+    opacity: .9;
+}
+
+.nube::before,
+.nube::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.nube::before {
+    width: 60px;
+    height: 60px;
+    left: 20px;
+    bottom: 10px;
+}
+
+.nube::after {
+    width: 75px;
+    height: 75px;
+    right: 15px;
+    bottom: 5px;
+}
+
+.nube1 {
+    top: 90px;
+    left: 40px;
+}
+
+.nube2 {
+    top: 210px;
+    right: 40px;
+    transform: scale(.7);
+}
+
+/* CAMPO */
+.campo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42%;
+    background: linear-gradient(#56b83f, #237b2b);
+    border-radius: 50% 50% 0 0;
+}
+
+/* FLORES */
+.flor {
+    position: absolute;
+    bottom: 15%;
+    font-size: 32px;
+    animation: mover 3s ease-in-out infinite;
+}
+
+.f1 { left: 5%; }
+.f2 { left: 15%; animation-delay: .5s; }
+.f3 { left: 25%; animation-delay: 1s; }
+.f4 { left: 35%; animation-delay: .3s; }
+.f5 { left: 48%; animation-delay: .8s; }
+.f6 { left: 60%; animation-delay: .2s; }
+.f7 { left: 72%; animation-delay: .7s; }
+.f8 { left: 85%; animation-delay: .4s; }
+.f9 { left: 93%; animation-delay: 1.2s; }
+
+@keyframes mover {
+    0%,100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+/* MENSAJE */
+.mensaje {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 650px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    text-shadow:
+        2px 2px 5px #d00065,
+        0 0 10px #ff4f9a;
+    opacity: 0;
+    animation: aparecer 7s ease forwards;
+    line-height: 1.5;
+    z-index: 10;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* CORAZONES Y EMOJIS */
+.particula {
+    position: fixed;
+    top: -50px;
+    font-size: 25px;
+    animation: caer linear infinite;
+    z-index: 20;
+    pointer-events: none;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* BOTÓN */
+.boton {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4f9a;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #555;
+    z-index: 50;
+}
+
+.boton:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<div class="cielo"></div>
+
+<div class="sol"></div>
+
+<div class="arcoiris"></div>
+
+<div class="nube nube1"></div>
+<div class="nube nube2"></div>
+
+<div class="campo"></div>
+
+<!-- FLORES -->
+<div class="flor f1">🌷</div>
+<div class="flor f2">🌸</div>
+<div class="flor f3">🌻</div>
+<div class="flor f4">🌹</div>
+<div class="flor f5">🌷</div>
+<div class="flor f6">🌼</div>
+<div class="flor f7">🌸</div>
+<div class="flor f8">🌻</div>
+<div class="flor f9">🌹</div>
+
+<!-- MENSAJE -->
+<div class="mensaje">
+    Mi cachetonaaa 💗<br><br>
+
+    Nunca pienses que no te amo,
+    porque en serio me encantas mucho.
+    Eres la mejor persona que he conocido.
+    Quiero vivir más momentos bonitos contigo
+    y ser feliz contigo por siempre. 💗<br><br>
+
+    Yo te voy a amar y te voy a cuidar
+    con todo mi amor. ❤️<br><br>
+
+    Y es que si tú supieras lo que te quiero...
+    hasta mis ojos te daría jsjsjsjs. 🥹💗<br><br>
+
+    Me encantas, amor. 💗💗<br><br>
+
+    <strong>TE AMO ESME 💗🌸🌈</strong>
+</div>
+
+<button class="boton" onclick="crearExplosion()">
+    💗 Para mi Esme 💗
+</button>
+
+<script>
+
+const emojis = [
+    "💗","❤️","💕","💖","💘",
+    "🌸","🌷","🌹","🌻","🌼",
+    "🌈","🥰","💞","✨","💐"
+];
+
+function crearParticula() {
+
+    const p = document.createElement("div");
+
+    p.className = "particula";
+
+    p.innerHTML =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    p.style.left = Math.random() * 100 + "vw";
+
+    p.style.fontSize =
+        (18 + Math.random() * 30) + "px";
+
+    p.style.animationDuration =
+        (4 + Math.random() * 6) + "s";
+
+    document.body.appendChild(p);
+
+    setTimeout(() => {
+        p.remove();
+    }, 10000);
+}
+
+/* CREA MUCHOS CORAZONES Y FLORES */
+setInterval(crearParticula, 350);
+
+
+/* EXPLOSIÓN DE CORAZONES */
+function crearExplosion() {
+
+    for (let i = 0; i < 60; i++) {
+
+        const p = document.createElement("div");
+
+        p.className = "particula";
+
+        p.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        p.style.left = "50vw";
+        p.style.top = "50vh";
+        p.style.fontSize =
+            (20 + Math.random() * 30) + "px";
+
+        const x =
+            (Math.random() - 0.5) * 1000;
+
+        const y =
+            (Math.random() - 0.5) * 700;
+
+        p.animate(
+            [
+                {
+                    transform: "translate(0,0) scale(1)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translate(${x}px,${y}px) scale(0.2)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: 2500,
+                easing: "ease-out"
+            }
+        );
+
+        document.body.appendChild(p);
+
+        setTimeout(() => {
+            p.remove();
+        }, 2600);
+    }
+}
+
+</script>
+
+</body>
+</html>
